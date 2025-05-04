@@ -1,50 +1,22 @@
-# Welcome to your Expo app 👋
+# PE03 - todos
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+**REFERENCE:**
 
-## Get started
+**Dabit, N. (2019). React
+Native in Action. Manning Publications. (ISBN 9781617294051)**
 
-1. Install dependencies
+# Input
 
-   ```bash
-   npm install
-   ```
+The tools usd for this app are React, Expo, and VS Code/GitHub Codespace for optional Cloud IDE.
 
-2. Start the app
+The input is a text from user to enter in a task for the todo list, with an option to mark the task as done by clicking the Done button or to remove the task from the list by using the Delete button. The user can select the tab bar at the bottom to view all tasks, active tasks, and completed tasks.
 
-   ```bash
-    npx expo start
-   ```
+# Process
 
-In the output, you'll find options to open the app in a
+The user enter in a String to be added into the list by typing in a task in the TextInput in the Input.js component. The Todo.js is responsible to display the newly added task individually along with its Done and Delete button. Clicking the Done button highlights the button and changed the state of this task to be completed. Clicking the Delete button will remove the task from the list. TodoList.js is responsible to display the entire task(s) in the list by calling the Todo component.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+There are three tabs (All, Active, and Complete) that can be clicked at the bottom, utilizing TouchableHighlight component, to "highlight" the seleceted tab. Each respective tab will show all tasks available in the list, only active tasks in the list, or completed tasks in the list.
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+# Output
 
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+The output of this program is a simple task tracker to show all available tasks, tasks that are not done yet, or tasks that have been completed. User can add new tasks to the list and track them by either clicking the Done button to show that they are completed or completely removing the task by clicking the Delete button.
