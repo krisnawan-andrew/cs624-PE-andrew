@@ -5,13 +5,14 @@ import { Image, Platform, StyleSheet, Text, TouchableHighlight, View } from 'rea
 
 const userImage = require('../../assets/images/user.png');
 
-const data = [{
+// more data
+const data = Array(6).fill().map(() => ({
     image: userImage,
     name: 'John Doe',
     occupation: 'React Native Developer',
     description: 'John is a really great JavaScript developer. ' + 'He loves using JS to build React Native applications ' + 'for iOS and Android',
     showThumbnail: true
-}]
+}));
 
 const ProfileCard = (props) => {
     const { image, name, occupation, description, onPress, showThumbnail } = props;
@@ -96,85 +97,90 @@ const profileCardColor = 'dodgerblue'
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center'
+        justifyContent: 'space-around',
+        flexDirection: 'row',       // flex into row
+        flexWrap: 'wrap',           // allows wrapping
+        padding: 10                 // add padding
     },
     cardContainer: {
         alignItems: 'center',
         borderColor: 'black',
-        borderWidth: 3,
+        borderWidth: 1,
         borderStyle: 'solid',
-        borderRadius: 20,
+        borderRadius: 5,
         backgroundColor: profileCardColor,
-        width: 300,
-        height: 400,
+        width: 150,
+        height: 200,
+        margin: 5,     // add margin for spacing
         ...Platform.select({
             ios: {
                 shadowColor: 'black',
                 shadowOffset: {
-                    height: 10
+                    height: 5
                 },
                 shadowOpacity: 1
             },
             android: {
-                elevation: 15
+                elevation: 5
             }
         })
     },
     cardImageContainer: {
         alignItems: 'center',
         backgroundColor: 'white',
-        borderWidth: 3,
+        borderWidth: 1,
         borderColor: 'black',
-        width: 120,
-        height: 120,
-        borderRadius: 60,
-        marginTop: 30,
-        paddingTop: 15,
+        width: 30,
+        height: 30,
+        borderRadius: 30,
+        marginTop: 5,
+        paddingTop: 5,
         ...Platform.select({
             ios: {
                 shadowColor: 'black',
                 shadowOffset: {
-                    height: 10
+                    height: 5
                 },
                 shadowOpacity: 1
             },
             android: {
-                borderWidth: 3,
+                borderWidth: 1,
                 borderColor: 'black',
-                elevation: 15
+                elevation: 5
             }
         })
     },
     cardImage: {
-        width: 80,
-        height:80
+        width: 15,
+        height: 15
     },
     cardName: {
         color: 'white',
-        marginTop: 30,
+        marginTop: 5,
         textShadowColor: 'black',
         textShadowOffset: {
-            height: 5,
-            width: 5
+            height: 2,
+            width: 2
         },
-        textShadowRadius: 3
+        textShadowRadius: 1.5
     },
     cardOccupationContainer: {
         borderColor: 'black',
-        borderBottomWidth: 3
+        borderBottomWidth: 1.5
     },
     cardOccupation: {
         fontWeight: 'bold',
-        marginTop: 10,
-        marginBottom: 10
+        marginTop: 5,
+        marginBottom: 5,
+        fontSize: 10
     },
     cardDescription: {
         fontStyle: 'italic',
-        marginTop: 10,
-        marginRight: 40,
-        marginLeft: 40,
-        marginBottom: 10
+        fontSize: 10,
+        marginTop: 5,
+        marginRight: 20,
+        marginLeft: 20,
+        marginBottom: 5
     },
     cardThumbnail: {
         transform: [{scale: 0.2}]

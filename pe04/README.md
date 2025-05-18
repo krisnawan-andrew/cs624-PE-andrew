@@ -1,50 +1,20 @@
-# Welcome to your Expo app 👋
+# PE04 - Profile Cards
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+**REFERENCE:**
 
-## Get started
+**Dabit, N. (2019). React
+Native in Action. Manning Publications. (ISBN 9781617294051)**
 
-1. Install dependencies
+# Input
 
-   ```bash
-   npm install
-   ```
+The tools used for this app are React, Expo, and VS Code/GitHub Codespace for optional Cloud IDE.
 
-2. Start the app
+The input is a list of ProfileCard object that contains an image, name, occupation, description, and showThumbnail for each object. User can tap on these ProfileCard to expand them and see the content.
 
-   ```bash
-   npx expo start
-   ```
+# Process
 
-In the output, you'll find options to open the app in a
+The 6 ProfileCards are displayed as thumbnails. The layout uses flexDirection: row and flexWrap: wrap in the parent container, creating a responsive grid for different screen sizes. When a ProfileCard is clicked, it will be enlarged to its original size by toggling showThumbnail between true/false using immutability-helper. This triggers a setState update in the parent component, causing React to re-render the affected card.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+# Output
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+The output of this program is a 2x3 grid of scaled down ProfileCards for a total of 6 ProfileCards. Tapping the ProfileCard will expand it to show its content and tapping it again will shrink it back to the thumbnail size. Each card can be clicked independently.
