@@ -22,6 +22,20 @@ class App extends Component {
         this.setType = this.setType.bind(this)
     }
 
+    componentDidMount() {
+        this.fetchTodos();
+    }
+
+    fetchTodos = async () => {
+        try {
+            const response = await fetch('https://cityutodoapi.azurewebsites.net/todos/');
+            const todos = await response.json();
+            this.setState({ todos })
+        } catch (error) {
+            console.error(error)
+        }
+    }
+
     setType(type) {
         this.setState({ type })
     }

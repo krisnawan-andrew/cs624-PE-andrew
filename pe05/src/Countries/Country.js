@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView, StyleSheet, Text, TextInput, TouchableOpacountry, View } from 'react-native';
+import { ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { colors } from '../theme';
 
 class Country extends React.Component {
@@ -57,11 +57,11 @@ class Country extends React.Component {
           placeholderTextColor="white"
         />
         <View style={styles.buttonContainer}>
-          <TouchableOpacountry onPress={this.addLocation}>
+          <TouchableOpacity onPress={this.addLocation}>
             <View style={styles.button}>
               <Text style={styles.buttonText}>Add Location</Text>
             </View>
-          </TouchableOpacountry>
+          </TouchableOpacity>
         </View>
       </View>
     );
